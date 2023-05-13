@@ -6,7 +6,7 @@
 #
 ---
 # See https://clang.llvm.org/extra/clang-tidy/#using-clang-tidy for all possible checks
-Checks: '-*, bugprone-*, google-*, llvm-*, readability-*, -google-build-using-namespace, -llvm-header-guard, -google-global-names-in-headers, -clang-diagnostic-error, -readability-magic-numbers,-readability-convert-member-functions-to-static, -readability-make-member-function-const'
+Checks: -Wall -Wextra -Wno-sign-compare
 
 WarningsAsErrors:  '*'
 HeaderFilterRegex: '.*'
