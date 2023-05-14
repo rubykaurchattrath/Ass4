@@ -1,4 +1,4 @@
-Sat May 13 17:18:06 PDT 2023
+Sat May 13 17:21:55 PDT 2023
 *** compiling with clang++ to create an executable called myprogram
 Apple clang version 13.1.6 (clang-1316.0.21.2.5)
 Target: arm64-apple-darwin21.4.0
@@ -38,22 +38,13 @@ main.cpp:88:31: error: use of undeclared identifier 'skp'
   assert(skp.contains(-20) && skp.contains(100));
                               ^
 11 errors generated.
-skiplist.cpp:119:57: error: function definition is not allowed here
-vector<SNode *> SkipList::getBeforeNodes(int val) const {
-                                                        ^
-skiplist.cpp:134:50: error: function definition is not allowed here
-bool SkipList::shouldInsertAtHigherLevel() const {
-                                                 ^
-skiplist.cpp:139:30: error: function definition is not allowed here
+skiplist.cpp:136:11: error: use of undeclared identifier 'randomChance'
+  return (randomChance() < probability);
+          ^
+skiplist.cpp:140:16: error: out-of-line definition of 'print' does not match any declaration in 'SkipList'
 void SkipList::print() const {
-                             ^
-skiplist.cpp:149:2: error: expected '}'
-}
- ^
-skiplist.cpp:109:40: note: to match this '{'
-bool SkipList::contains(int val) const {
-                                       ^
-4 errors generated.
+               ^~~~~
+2 errors generated.
 *** running clang-tidy using options from .clang-tidy
 ./simplecompile.sh: line 25: clang-tidy: command not found
 ./simplecompile.sh: line 26: clang-tidy: command not found
@@ -61,4 +52,4 @@ bool SkipList::contains(int val) const {
 ./simplecompile.sh: line 29: ./myprogram: No such file or directory
 *** cleaning up, deleting myprogram
 rm: myprogram: No such file or directory
-Sat May 13 17:18:08 PDT 2023
+Sat May 13 17:21:57 PDT 2023
