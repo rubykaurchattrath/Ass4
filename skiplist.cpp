@@ -22,8 +22,7 @@ SkipList::SkipList(int levels, int probability)
 }
 
 // SkipList copy constructor
-SkipList::SkipList(const SkipList &other)
-    : levels(other.levels), probability(other.probability) {
+SkipList::SkipList(const SkipList &other) : levels(other.levels), probability(other.probability) {
   head = new SNode(INT_MIN);
   head->next.resize(levels, nullptr);
 
