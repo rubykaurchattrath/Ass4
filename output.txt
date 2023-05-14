@@ -1,0 +1,64 @@
+Sat May 13 16:25:31 PDT 2023
+*** compiling with clang++ to create an executable called myprogram
+Apple clang version 13.1.6 (clang-1316.0.21.2.5)
+Target: arm64-apple-darwin21.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+main.cpp:70:3: error: use of undeclared identifier 'skp'
+  skp.add(vector<int>{9, 1, 7, 5, 3, 20});
+  ^
+main.cpp:72:12: error: use of undeclared identifier 'skp'
+  outSS << skp;
+           ^
+main.cpp:77:3: error: use of undeclared identifier 'skp'
+  skp.add(vector<int>{-20, 100});
+  ^
+main.cpp:79:12: error: use of undeclared identifier 'skp'
+  outSS << skp;
+           ^
+main.cpp:86:10: error: use of undeclared identifier 'skp'
+  assert(skp.contains(1) && skp.contains(7) && skp.contains(9));
+         ^
+main.cpp:86:29: error: use of undeclared identifier 'skp'
+  assert(skp.contains(1) && skp.contains(7) && skp.contains(9));
+                            ^
+main.cpp:86:48: error: use of undeclared identifier 'skp'
+  assert(skp.contains(1) && skp.contains(7) && skp.contains(9));
+                                               ^
+main.cpp:87:11: error: use of undeclared identifier 'skp'
+  assert(!skp.contains(0) && !skp.contains(200));
+          ^
+main.cpp:87:31: error: use of undeclared identifier 'skp'
+  assert(!skp.contains(0) && !skp.contains(200));
+                              ^
+main.cpp:88:10: error: use of undeclared identifier 'skp'
+  assert(skp.contains(-20) && skp.contains(100));
+         ^
+main.cpp:88:31: error: use of undeclared identifier 'skp'
+  assert(skp.contains(-20) && skp.contains(100));
+                              ^
+11 errors generated.
+skiplist.cpp:119:57: error: function definition is not allowed here
+vector<SNode *> SkipList::getBeforeNodes(int val) const {
+                                                        ^
+skiplist.cpp:134:50: error: function definition is not allowed here
+bool SkipList::shouldInsertAtHigherLevel() const {
+                                                 ^
+skiplist.cpp:139:30: error: function definition is not allowed here
+void SkipList::print() const {
+                             ^
+skiplist.cpp:149:2: error: expected '}'
+}
+ ^
+skiplist.cpp:109:40: note: to match this '{'
+bool SkipList::contains(int val) const {
+                                       ^
+4 errors generated.
+*** running clang-tidy using options from .clang-tidy
+./simplecompile.sh: line 25: clang-tidy: command not found
+./simplecompile.sh: line 26: clang-tidy: command not found
+*** running myprogram
+./simplecompile.sh: line 29: ./myprogram: No such file or directory
+*** cleaning up, deleting myprogram
+rm: myprogram: No such file or directory
+Sat May 13 16:25:32 PDT 2023

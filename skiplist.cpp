@@ -112,6 +112,7 @@ bool SkipList::contains(int val) const {
     while (curr->next[i] && curr->next[i]->val < val) {
       curr = curr->next[i]; 
     }
+  }
   return (curr->next[0] && curr->next[0]->val == val);
 }
 
