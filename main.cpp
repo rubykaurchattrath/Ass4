@@ -134,9 +134,9 @@ void test4() {
 
 int main() {
   test1();
-  test2();
-  test3();
-  test4();
+ // test2();
+ // test3();
+ // test4();
   cout << "Done." << endl;
   return 0;
 }

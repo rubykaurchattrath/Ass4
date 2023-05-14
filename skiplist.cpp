@@ -22,8 +22,7 @@ SkipList::SkipList(int levels, int probability)
 }
 
 // SkipList copy constructor
-SkipList::SkipList(const SkipList &other)
-    : levels(other.levels), probability(other.probability) {
+SkipList::SkipList(const SkipList &other) : levels(other.levels), probability(other.probability) {
   head = new SNode(INT_MIN);
   head->next.resize(levels, nullptr);
 
@@ -136,20 +135,7 @@ bool SkipList::shouldInsertAtHigherLevel() const {
 return probability >= Random::random() % 100;
 }
 
-/* // Print the contents of the SkipList
-void SkipList::print() const {
-  for (int i = levels - 1; i >= 0; i--) {
-    SNode *curr = head->next[i];
-    cout << "Level " << i << ": ";
-    while (curr) {
-      cout << curr->val << " ";
-      curr = curr->next[i];
-    }
-    cout << endl;
-  }
-} */
-
-//ostream to print it i guess
+// prints out skiplist
 ostream &operator<<(ostream &out, const SkipList &skip) {
     SNode *curr = skip.head->next[0];
     while (curr != nullptr) {
