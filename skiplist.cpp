@@ -131,9 +131,9 @@ vector<SNode *> SkipList::getBeforeNodes(int val) const {
   return beforeNodes;
 }
 
-// Check if a node should be inserted at a higher level
+// checks if the value needs to be inserted at a higher level
 bool SkipList::shouldInsertAtHigherLevel() const {
-  return (randomChance() < probability);
+return probability >= Random::random() % 100;
 }
 
 /* // Print the contents of the SkipList
