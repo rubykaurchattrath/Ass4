@@ -1,4 +1,4 @@
-Sat May 13 17:28:46 PDT 2023
+Sat May 13 22:24:59 PDT 2023
 *** compiling with clang++ to create an executable called myprogram
 Apple clang version 13.1.6 (clang-1316.0.21.2.5)
 Target: arm64-apple-darwin21.4.0
@@ -45,4 +45,4 @@ main.cpp:88:31: error: use of undeclared identifier 'skp'
 ./simplecompile.sh: line 29: ./myprogram: No such file or directory
 *** cleaning up, deleting myprogram
 rm: myprogram: No such file or directory
-Sat May 13 17:28:47 PDT 2023
+Sat May 13 22:25:00 PDT 2023

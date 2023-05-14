@@ -148,3 +148,14 @@ void SkipList::print() const {
     cout << endl;
   }
 } */
+
+//ostream to print it i guess
+ostream &operator<<(ostream &out, const SkipList &skip) {
+    SNode *curr = skip.head->next[0];
+    while (curr != nullptr) {
+        out << curr->val << " ";
+        curr = curr->next[0];
+    }
+    out << endl;
+    return out;
+}
