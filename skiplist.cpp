@@ -136,7 +136,7 @@ bool SkipList::shouldInsertAtHigherLevel() const {
   return (randomChance() < probability);
 }
 
-// Print the contents of the SkipList
+/* // Print the contents of the SkipList
 void SkipList::print() const {
   for (int i = levels - 1; i >= 0; i--) {
     SNode *curr = head->next[i];
@@ -147,4 +147,4 @@ void SkipList::print() const {
     }
     cout << endl;
   }
-}
+} */
