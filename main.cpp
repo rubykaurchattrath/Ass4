@@ -66,7 +66,7 @@ void test2() {
 // testing SkipList with multiple levels
 void test3() {
   stringstream outSS;
-  // SkipList skp(3, 80);
+  SkipList skp(3, 80);
   skp.add(vector<int>{9, 1, 7, 5, 3, 20});
 
   outSS << skp;
