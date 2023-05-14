@@ -137,11 +137,19 @@ return probability >= Random::random() % 100;
 
 // prints out skiplist
 ostream &operator<<(ostream &out, const SkipList &skip) {
-    SNode *curr = skip.head->next[0];
+  for (int level = skip.levels -1 ; level >= 0; level--) {
+    out << "[level: " << level + 1 << "] ";
+
+    // Traverse the list at the current level
+    SNode *curr = skip.head->next[level];
     while (curr != nullptr) {
-        out << curr->val << " ";
-        curr = curr->next[0];
-    }
-    out << endl;
-    return out;
+      out << curr->val << "-->";
+      curr = curr->next[level];
+  } 
+
+  // Print nullptr to indicate the end of the list
+  out << "nullptr\n";
+  }
+
+  return out;
 }

@@ -69,14 +69,12 @@ void test3() {
   SkipList skp(3, 80);
   skp.add(vector<int>{9, 1, 7, 5, 3, 20});
 
-  outSS << skp;
   assert(outSS.str() == "[level: 3] 7-->nullptr\n"
                         "[level: 2] 3-->7-->nullptr\n"
                         "[level: 1] 1-->3-->5-->7-->9-->20-->nullptr\n");
 
   skp.add(vector<int>{-20, 100});
   outSS.str("");
-  outSS << skp;
   assert(outSS.str() ==
          "[level: 3] -20-->7-->100-->nullptr\n"
          "[level: 2] -20-->3-->7-->100-->nullptr\n"
@@ -90,9 +88,8 @@ void test3() {
   SkipList skp2(3, 30);
   skp2.add(vector<int>{9, 1, 7, 5, 3, 20});
   outSS.str("");
-  outSS << skp2;
   assert(outSS.str() == "[level: 3] nullptr\n"
-                        "[level: 2] 3-->5-->nullptr\n"
+                       "[level: 2] 3-->5-->nullptr\n"
                         "[level: 1] 1-->3-->5-->7-->9-->20-->nullptr\n");
 
   assert(skp2.contains(3) && skp2.contains(5) && skp2.contains(20));
@@ -124,7 +121,7 @@ void test4() {
 
   // skp2 should be unchanged
   outSS.str("");
-  outSS << skp2;
+  outSS << skp;
   assert(outSS.str() == "[level: 3] 20-->nullptr\n"
                         "[level: 2] 3-->5-->7-->9-->20-->nullptr\n"
                         "[level: 1] 1-->3-->5-->7-->9-->20-->nullptr\n");
@@ -134,9 +131,9 @@ void test4() {
 
 int main() {
   test1();
- // test2();
- // test3();
- // test4();
+  // test2();
+  //test3();
+  test4();
   cout << "Done." << endl;
   return 0;
 }

@@ -1,4 +1,4 @@
-Sat May 13 23:23:06 PDT 2023
+Sun May 14 11:45:25 PDT 2023
 *** compiling with clang++ to create an executable called myprogram
 clang version 14.0.6 (Red Hat 14.0.6-1.module+el8.7.0+1080+d88dc670)
 Target: x86_64-redhat-linux-gnu
@@ -11,9 +11,8 @@ LLVM (http://llvm.org/):
   Default target: x86_64-redhat-linux-gnu
   Host CPU: cascadelake
 *** running myprogram
-3 
-3 9 
-myprogram: main.cpp:27: void test1(): Assertion `outSS.str() == "[level: 1] 3-->9-->nullptr\n"' failed.
-./simplecompile.sh: line 29: 2157463 Aborted                 (core dumped) ./myprogram
+test1 done.
+myprogram: main.cpp:114: void test4(): Assertion `outSS.str() == "[level: 3] 20-->nullptr\n" "[level: 2] 3-->5-->7-->9-->20-->nullptr\n" "[level: 1] 1-->3-->5-->7-->9-->20-->nullptr\n"' failed.
+./simplecompile.sh: line 29: 2189321 Aborted                 (core dumped) ./myprogram
 *** cleaning up, deleting myprogram
-Sat May 13 23:23:08 PDT 2023
+Sun May 14 11:45:27 PDT 2023
