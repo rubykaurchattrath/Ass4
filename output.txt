@@ -1,95 +1,19 @@
-Mon May 15 14:24:32 PDT 2023
+Mon May 15 15:59:00 PDT 2023
 *** compiling with clang++ to create an executable called myprogram
 clang version 14.0.6 (Red Hat 14.0.6-1.module+el8.7.0+1080+d88dc670)
 Target: x86_64-redhat-linux-gnu
 Thread model: posix
 InstalledDir: /usr/bin
-skiplist.cpp:53:11: error: redefinition of 'SkipList'
-SkipList::SkipList(const SkipList &other) : levels(other.levels), probability(other.probability) {
-          ^
-skiplist.cpp:25:11: note: previous definition is here
-SkipList::SkipList(const SkipList &other) : levels(other.levels), probability(other.probability) {
-          ^
-skiplist.cpp:68:22: error: expected ';' after expression
-SkipList::~SkipList() {
-                     ^
-                     ;
-skiplist.cpp:78:29: error: function definition is not allowed here
-void SkipList::add(int val) {
-                            ^
-skiplist.cpp:95:47: error: function definition is not allowed here
-void SkipList::add(const vector<int> &values) {
-                                              ^
-skiplist.cpp:103:32: error: function definition is not allowed here
-bool SkipList::remove(int val) {
-                               ^
-skiplist.cpp:124:40: error: function definition is not allowed here
-bool SkipList::contains(int val) const {
-                                       ^
-skiplist.cpp:135:57: error: function definition is not allowed here
-vector<SNode *> SkipList::getBeforeNodes(int val) const {
-                                                        ^
-skiplist.cpp:150:50: error: function definition is not allowed here
-bool SkipList::shouldInsertAtHigherLevel() const {
-                                                 ^
-skiplist.cpp:155:57: error: function definition is not allowed here
-ostream &operator<<(ostream &out, const SkipList &skip) {
-                                                        ^
-skiplist.cpp:171:2: error: expected '}'
-}
- ^
-skiplist.cpp:53:98: note: to match this '{'
-SkipList::SkipList(const SkipList &other) : levels(other.levels), probability(other.probability) {
-                                                                                                 ^
-10 errors generated.
 *** running clang-tidy using options from .clang-tidy
 LLVM (http://llvm.org/):
   LLVM version 14.0.6
   Optimized build.
   Default target: x86_64-redhat-linux-gnu
   Host CPU: cascadelake
-10 errors generated.
-Error while processing /home/NETID/rubykaur/Ass4-1/skiplist.cpp.
-/home/NETID/rubykaur/Ass4-1/skiplist.cpp:53:11: error: redefinition of 'SkipList' [clang-diagnostic-error]
-SkipList::SkipList(const SkipList &other) : levels(other.levels), probability(other.probability) {
-          ^
-/home/NETID/rubykaur/Ass4-1/skiplist.cpp:25:11: note: previous definition is here
-SkipList::SkipList(const SkipList &other) : levels(other.levels), probability(other.probability) {
-          ^
-/home/NETID/rubykaur/Ass4-1/skiplist.cpp:68:22: error: expected ';' after expression [clang-diagnostic-error]
-SkipList::~SkipList() {
-                     ^
-                     ;
-/home/NETID/rubykaur/Ass4-1/skiplist.cpp:78:29: error: function definition is not allowed here [clang-diagnostic-error]
-void SkipList::add(int val) {
-                            ^
-/home/NETID/rubykaur/Ass4-1/skiplist.cpp:95:47: error: function definition is not allowed here [clang-diagnostic-error]
-void SkipList::add(const vector<int> &values) {
-                                              ^
-/home/NETID/rubykaur/Ass4-1/skiplist.cpp:103:32: error: function definition is not allowed here [clang-diagnostic-error]
-bool SkipList::remove(int val) {
-                               ^
-/home/NETID/rubykaur/Ass4-1/skiplist.cpp:124:40: error: function definition is not allowed here [clang-diagnostic-error]
-bool SkipList::contains(int val) const {
-                                       ^
-/home/NETID/rubykaur/Ass4-1/skiplist.cpp:135:57: error: function definition is not allowed here [clang-diagnostic-error]
-vector<SNode *> SkipList::getBeforeNodes(int val) const {
-                                                        ^
-/home/NETID/rubykaur/Ass4-1/skiplist.cpp:150:50: error: function definition is not allowed here [clang-diagnostic-error]
-bool SkipList::shouldInsertAtHigherLevel() const {
-                                                 ^
-/home/NETID/rubykaur/Ass4-1/skiplist.cpp:155:57: error: function definition is not allowed here [clang-diagnostic-error]
-ostream &operator<<(ostream &out, const SkipList &skip) {
-                                                        ^
-/home/NETID/rubykaur/Ass4-1/skiplist.cpp:171:2: error: expected '}' [clang-diagnostic-error]
-}
- ^
-/home/NETID/rubykaur/Ass4-1/skiplist.cpp:53:98: note: to match this '{'
-SkipList::SkipList(const SkipList &other) : levels(other.levels), probability(other.probability) {
-                                                                                                 ^
-Found compiler error(s).
 *** running myprogram
-./simplecompile.sh: line 29: ./myprogram: No such file or directory
+test1 done.
+test2 done.
+myprogram: main.cpp:82: void test3(): Assertion `outSS.str() == "[level: 3] -20-->7-->100-->nullptr\n" "[level: 2] -20-->3-->7-->100-->nullptr\n" "[level: 1] -20-->1-->3-->5-->7-->9-->20-->100-->nullptr\n"' failed.
+./simplecompile.sh: line 29: 2276487 Aborted                 (core dumped) ./myprogram
 *** cleaning up, deleting myprogram
-rm: cannot remove 'myprogram': No such file or directory
-Mon May 15 14:24:34 PDT 2023
+Mon May 15 15:59:03 PDT 2023
