@@ -2,6 +2,7 @@
 #include <cassert>
 #include <iostream>
 #include <sstream>
+#include <valgrind/valgrind.h>
 
 using namespace std;
 
