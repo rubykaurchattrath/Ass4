@@ -136,7 +136,9 @@ int main() {
   test1();
   test2();
   //test3();
+  cout << "test3 done." << endl; //debug
   //test4();
+  cout << "test4 done." << endl; //debug
   cout << "Done." << endl;
   return 0;
 }
