@@ -1,3 +1,6 @@
+// Ruby Kaur and Jasjeen Khosa
+// CSS 342
+
 /**
  * SkipList https://en.wikipedia.org/wiki/Skip_list
  * also used by MemSQL

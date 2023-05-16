@@ -1,3 +1,6 @@
+// Ruby Kaur and Jasjeen Khosa
+// CSS 342
+
 #ifndef RANDOM_H
 #define RANDOM_H
 

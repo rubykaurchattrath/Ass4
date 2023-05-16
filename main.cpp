@@ -1,3 +1,6 @@
+// Ruby Kaur and Jasjeen Khosa
+// CSS 342
+
 #include "skiplist.h"
 #include <cassert>
 #include <iostream>
@@ -40,7 +43,6 @@ void test1() {
   assert(skp.contains(1) && skp.contains(7) && skp.contains(9));
   assert(!skp.contains(0) && !skp.contains(20));
 
-  // TODO(student) check there are no memory leaks after test completed
   cout << "test1 done." << endl;
 }
 
@@ -60,7 +62,7 @@ void test2() {
   outSS << *skp2;
   assert(outSS.str() == "[level: 1] 1-->5-->7-->9-->nullptr\n");
   delete skp2;
-  // TODO(student) check there are no memory leaks after test completed
+
   cout << "test2 done." << endl;
 }
 
@@ -69,10 +71,10 @@ void test3() {
   stringstream outSS;
   SkipList skp(3, 80);
   skp.add(vector<int>{9, 1, 7, 5, 3, 20});
-  cout << skp;
-/*   assert(outSS.str() == "[level: 3] 7-->nullptr\n"
+  assert(outSS.str() == "[level: 3] 7-->nullptr\n"
                         "[level: 2] 3-->7-->nullptr\n"
-                        "[level: 1] 1-->3-->5-->7-->9-->20-->nullptr\n"); */
+                        "[level: 1] 1-->3-->5-->7-->9-->20-->nullptr\n");
+
 
   skp.add(vector<int>{-20, 100});
   outSS.str("");
@@ -90,12 +92,12 @@ void test3() {
   skp2.add(vector<int>{9, 1, 7, 5, 3, 20});
   outSS.str("");
   assert(outSS.str() == "[level: 3] nullptr\n"
-                       "[level: 2] 3-->5-->nullptr\n"
+                        "[level: 2] 3-->5-->nullptr\n"
                         "[level: 1] 1-->3-->5-->7-->9-->20-->nullptr\n");
 
   assert(skp2.contains(3) && skp2.contains(5) && skp2.contains(20));
   assert(!skp2.contains(-3) && !skp2.contains(4) && !skp2.contains(200));
-  //TODO(student) check there are no memory leaks after test completed
+
   cout << "test3 done." << endl;
 }
 
@@ -126,7 +128,7 @@ void test4() {
   assert(outSS.str() == "[level: 3] 20-->nullptr\n"
                         "[level: 2] 3-->5-->7-->9-->20-->nullptr\n"
                         "[level: 1] 1-->3-->5-->7-->9-->20-->nullptr\n");
-  // TODO(student) check there are no memory leaks after test completed
+
   cout << "test4 done." << endl;
 }
 
@@ -134,7 +136,7 @@ int main() {
   test1();
   test2();
   test3();
-  //test4();
+  test4();
   cout << "Done." << endl;
   return 0;
 }

@@ -1,3 +1,6 @@
+// Ruby Kaur and Jasjeen Khosa
+// CSS 342
+
 #include "skiplist.h"
 #include "random.h"
 #include <cassert>
@@ -84,37 +87,26 @@ void SkipList::add(const vector<int> &values) {
 
 // Remove a value from the SkipList
 bool SkipList::remove(int val) {
-  vector<SNode *> beforeNodes = getBeforeNodes(val);
-
-  SNode *target = beforeNodes[0]->next[0];
-
+  vector<SNode*> beforeNodes = getBeforeNodes(val);
+  
+  SNode* target = beforeNodes[0]->next[0];
+  
   if (!target || target->val != val) {
     return false; // Value not found
   }
-
+  
   for (int i = 0; i < levels; i++) {
     if (beforeNodes[i]->next[i] != target) {
       break;
     }
     beforeNodes[i]->next[i] = target->next[i];
   }
-
+  
   delete target;
   return true;
 }
 
-// Check if a value is present in the SkipList
-bool SkipList::contains(int val) const {
-  SNode *curr = head;
-  for (int i = levels - 1; i >= 0; i--) {
-    while (curr->next[i] && curr->next[i]->val < val) {
-      curr = curr->next[i]; 
-    }
-  }
-  return (curr->next[0] && curr->next[0]->val == val);
-}
-
-// Get the nodes before the insertion point for a given value
+// Get the nodes before the insertion position for a given value
 vector<SNode *> SkipList::getBeforeNodes(int val) const {
   vector<SNode *> beforeNodes(levels, nullptr);
 
@@ -129,12 +121,24 @@ vector<SNode *> SkipList::getBeforeNodes(int val) const {
   return beforeNodes;
 }
 
+// Check if a value is present in the SkipList
+bool SkipList::contains(int val) const {
+  SNode *curr = head;
+  for (int i = levels - 1; i >= 0; i--) {
+    while (curr->next[i] && curr->next[i]->val < val) {
+      curr = curr->next[i]; 
+    }
+  }
+  return (curr->next[0] && curr->next[0]->val == val);
+}
+
+
 // checks if the value needs to be inserted at a higher level
 bool SkipList::shouldInsertAtHigherLevel() const {
 return probability >= Random::random() % 100;
 }
 
-//ostream
+// ostream operator overload for printing the SkipList
 ostream &operator<<(ostream &out, const SkipList &skip) {
   for (int level = skip.levels -1 ; level >= 0; level--) {
     out << "[level: " << level + 1 << "] ";

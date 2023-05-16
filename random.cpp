@@ -1,3 +1,6 @@
+// Ruby Kaur and Jasjeen Khosa
+// CSS 342
+
 #include "random.h"
 #include <vector>
 
